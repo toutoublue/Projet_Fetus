@@ -1,0 +1,53 @@
+#viewer{
+	width:600px;
+	height:1000px;
+	background-color:lightblue;
+	margin-left:20px;
+	float:left;
+}
+
+#parameter{
+	width:600px;
+	height:1000px;
+	background-color:grey;
+	margin-right:20px;
+	float:right;
+	text-align:center;
+}
+
+#menu1{
+	background-color:rgb(228,242,251);
+}
+
+#menu2{
+	background-color:rgb(100,184,228);
+}
+
+#age_show{
+	font-family:arial;
+	color:white;
+	font-size:40px;
+}
+.Menubox{
+	font-family:arial;
+}
+
+.Contentbox{
+	margin-left:10px;
+}
+.Contentbox td{
+	color:white;
+	font-family:arial;
+	text-align:left;
+}
+
+.Contentbox table {
+	border-spacing:30px 0px;
+}
+
+.button{
+	width:200px;
+	text-align:center;
+	font-family:arial;
+	font-weight:bold;
+}

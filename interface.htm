@@ -1,0 +1,127 @@
+<! DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="format1.css">
+</head>
+<body>
+ 
+ <div id="viewer" >
+ <h2>Fetus Viewer</h2>
+ </div>
+
+ <div id="parameter" >
+	
+	<h2>Parameters</h2>
+	<h3 style="text-align:left;">Fetus Age</h3>
+	
+	<div id="age">
+		<form id="age_form">
+			<label id="age_show" >0</label>
+			<br/>
+			<input type="range" id="age_input" min="12" max="32" step="1" onclick="showage()"/>
+		</form>
+	</div>
+	
+	<div id="Tab">
+	  <div class="Menubox">
+		<table>
+		  <th id="menu1" onclick="setTab('menu',1,2)" >Legs Parameters</th>
+		  <th id="menu2" onclick="setTab('menu',2,2)" >Arms Parameters</th>
+		</table>
+	  </div>
+	  
+	  <div class="Contentbox"> 
+		<div id="con_menu_1">
+		  <table>
+			<tr>
+				<td>angle femur droit sagittal</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle femur droit coronal</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle rotation femur droit</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle femur gauche sagittal</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle femur gauche coronal</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle rotation femur gauche</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle de pliure du genou droit</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle de pliure du genou gauche</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle tibia/pied droit</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>angle tibia/pied gauche</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>anle rotation pied droit</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>anle rotation pied gauche</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+		</table>
+		</div>
+		
+		<div id="con_menu_2" style="display:none">
+		  <table>
+			<tr>
+				<td>arms_parameter1</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+			<tr>
+				<td>arms_parameter2</td>
+				<td><form><input type="number"></form></td>
+			</tr>
+		  </table>
+		</div>
+	  </div>
+	</div>
+	
+	<div id="parameter_button">
+		<button class="button" type="button">Load Existing Parameters</button><br/>
+		<button class="button" type="button">Save Existing Parameters</button><br/>
+		<button class="button" type="button">Generate Skeleton</button></br>
+		<button class="button" type="button">Preview Envelope</button></br>
+		<button class="button" type="button">Generate Fetus</button></br>
+	</div>
+	
+ </div>
+ 
+<script>
+
+	function setTab(name,cursel,n){
+	for(i=1;i<=n;i++){
+	var con=document.getElementById("con_"+name+"_"+i);
+	con.style.display=i==cursel?"block":"none";
+	}
+	}
+	
+	function showage(){
+		document.getElementById('age_show').innerText=document.getElementById('age_input').value;
+	}
+</script>
+ 
+</body>
+</html>
