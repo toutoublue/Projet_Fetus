@@ -1,24 +1,40 @@
 body {
 	text-align: center;
-	font: normal .85em "Trebuchet MS", Arial, Verdana;
+	font-family: 'Trebuchet MS', Arial, Verdana;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
 	background: #F5F5F5 url('../images/pattern.png');
 	color: #444;
 	padding: 0;
 	margin: 0;
+	height: 900px;
+	display: none;
 	/*
 	 font: 90%/1.5em "Lucida Grande", Geneva,
 	 "DejaVu Sans", "Bitstream Vera Sans", AnjaliOldLipi,
 	 "Lucida sans", "Trebuchet MS", Arial, Verdana;
 	 * */
 }
+a {
+	text-decoration: none;
+}
+
+.mydisabled {
+	color: rgb(160, 160, 160) !important;
+}
+.mydisabled:hover {
+	cursor: auto !important;
+}
 #help {
 	position: fixed;
 	top: 25px;
-	right: 50px;
-	opacity: 0.75;
-	z-index:4;
+	left: 25px;
+	opacity: 0.70;
+	z-index: 5;
 }
-#help:hover{
+#help:hover {
 	cursor: pointer;
 	opacity: 1;
 }
@@ -33,20 +49,36 @@ body {
 	z-index: 5;
 	margin: 0 auto;
 }
-#info_plus {
+#help-general {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	display: none;
 	position: absolute;
-	top: 250px;
+	border-radius: 4px;
+	z-index: 6;
+	background: rgba(0, 0, 0, 0.85);
+	color: rgb(211, 211, 211);
+	height: 900px;
+}
+#info_plus, #info_off {
+	position: absolute;
+	top: 150px;
 	left: 100px;
 	z-index: 6;
 	width: 250px;
-	height: 200px;
+	height: 300px;
 	background: white;
 	opacity: 1;
 	display: none;
+	border-radius: 4px;
+	padding: 20px;
+	font-size: 13px;
 }
 #load_fileparam {
 	position: absolute;
-	top: 250px;
+	top: 150px;
 	left: 100px;
 	z-index: 6;
 	background: white;
@@ -54,9 +86,11 @@ body {
 	display: none;
 	padding: 20px;
 	text-align: center;
+	border-radius: 4px;
+	font-size: 13px;
 }
-#loading{
-	margin:20px;
+#loading {
+	margin: 20px;
 }
 #title {
 	text-align: center;
@@ -65,102 +99,314 @@ body {
 	margin: 0;
 	text-shadow: 1px 1px 0 rgba(100, 100, 100, 0.8);
 }
+.annulReq {
+	position: absolute;
+	left: -150px;
+	top: 0px;
+	width: 125px !important;
+}
 #age {
 	position: relative;
-	width: 200px;
+	width: 120px;
+}
+#age_show {
+	color: rgb(139, 226, 247);
+	font-size: 50px;
+	text-shadow: 7px 7px 11px rgb(37, 37, 37);
 }
 #parameter_button {
 	position: relative;
 	float: right;
-	top: -50px;
+	top: 0px;
 }
 #parameter_button button {
 	padding: 5px;
-	font-size: 14px;
+	font-size: 12px;
 }
 #parameter_button button:hover {
 	cursor: pointer;
 }
 #viewer {
-	width: 600px;
-	height: auto;
-	margin-left: 20px;
+	display: none;
+	width: 720px;
+	position: relative;
 	float: left;
+	left: -500px;
 	text-align: center;
 	margin-bottom: 20px;
-}
-#viewer canvas {
 	box-shadow: 0 0 5px 1px black;
+	background: gray;
+	border-radius: 4px;
+	overflow: hidden;
+	display: none;
+	opacity: 0;
+}
+.hidden {
+	display: none !important;
+}
+.viewerOnly {
+	float: none !important;
+	display: block;
+	margin: 0 auto !important;
+	margin-bottom: 20px !important;
+}
+.lang-button:hover {
+	cursor: pointer;
+	opacity: 0.85;
+}
+.lang-button {
+	border-radius: 2px;
+	margin-left: 5px;
 }
 #age {
 	margin-bottom: 20px;
 }
-#close, #close2 {
-	position: absolute;
+#close, #close2, #closeOff {
+	position: relative;
 	float: right;
-	top: -10px;
-	right: -10px;
+	top: -15px;
+	right: -15px;
 }
-#close:hover, #close2:hover {
+#close3 {
+	position: relative;
+	float: right;
+	top: 0px;
+	right: -25px;
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+#close:hover, #close2:hover, #close3:hover, #closeOff:hover {
 	cursor: pointer;
 }
-#linkParam {
-	font-size: 25px;
+#colorParam {
+	position: absolute;
+	top: 0px;
+	text-align: left;
 }
-#parameter {
-	width: 600px;
-	background-color: gray;
-	float: right;
+.linkParam {
+	position: relative;
+	text-decoration: none;
+}
+#zoom-img {
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	opacity: 0.3;
+}
+.mybutton-1 {
+	margin: 4px;
+	border: 1px solid #25729a;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: arial, helvetica, sans-serif;
+	padding: 10px 10px 10px 10px;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+	font-weight: bold;
 	text-align: center;
-	padding: 10px 20px;
-	border-radius: 4px;
-	box-shadow: 0 0 5px 2px black;
-	margin-bottom: 20px;
-	margin-right: 20px;
-	min-height: 650px;
+	color: #FFFFFF;
+	background-color: #3093c7;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7), to(#1c5a85));
+	background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7, endColorstr=#1c5a85);
 }
 
+.mybutton-1:hover {
+	border: 1px solid #1c5675;
+	background-color: #26759e;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#26759e), top(#133d5b));
+	background-image: -webkit-linear-gradient(top, #26759e, #133d5b);
+	background-image: -moz-linear-gradient(top, #26759e, #133d5b);
+	background-image: -ms-linear-gradient(top, #26759e, #133d5b);
+	background-image: -o-linear-gradient(top, #26759e, #133d5b);
+	background-image: linear-gradient(to bottom, #26759e, #133d5b);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#26759e, endColorstr=#133d5b);
+	cursor: pointer;
+}
+
+#page-container {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 50px;
+	min-width: 1200px;
+}
+#closeParam, #openParam {
+	position: relative;
+	float: right;
+	top: 0;
+	right: 75px;
+	opacity: 0.68;
+}
+
+#openParam {
+	display: none;
+}
+#closeParam:hover, #openParam:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+#parameter {
+	overflow: visible !important;
+	width: 300px;
+	background-color: gray;
+	position: relative;
+	float: right;
+	right: -500px;
+	text-align: center;
+	padding: 3px 20px 15px 20px;
+	border-radius: 4px 0 0 4px;
+	box-shadow: 0 0 5px 2px black;
+	margin-bottom: 20px;
+	margin-right: 0px;
+	min-height: 650px;
+	display: none;
+	opacity: 0;
+}
+
+.help-param {
+	position: relative;
+	height: 11px;
+	top: 0px;
+	left: 2px;
+	opacity: 0.8;
+}
+.help-param:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+.paramF {
+	width: 50px;
+	font-size: 14px;
+}
+img.help-button {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	opacity: 0.8;
+	width: 13px;
+}
+img.help-button:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+#help-canvas {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 3;
+	opacity: 0.6;
+}
+#help-canvas {
+	cursor: pointer;
+	opacity: 1;
+}
 #param_legs, #param_arms, #param_head {
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
 	position: relative;
 	overflow: hidden;
 	height: 0px;
-	border-radius: 0 7px 7px 7px;
-	box-shadow: 3px 3px 9px -1px black
+	border-radius: 0 4px 4px 4px;
+	box-shadow: 0px 3px 9px -1px black;
+	padding-top: 25px;
 }
 #param_legs {
-	height: 350px;
-	background-color: rgb(206, 255, 190);
+	height: 400px;
+	background-color: rgb(179, 185, 207);
 }
 #param_arms {
-	background-color: rgb(100,184,228);
+	background-color: rgb(213, 213, 213);
+	display: none;
 }
 #param_head {
-	background-color: rgb(248, 173, 77);
+	background-color: rgb(140, 146, 167);
+	display: none;
 }
-
+#fetal_tissues {
+	text-align: left;
+	padding-left: 30px;
+}
+#fetal_tissues p {
+	width: 140px;
+	font-size: 14px;
+}
+#colorParam {
+	display: none;
+	padding-top: 15px;
+	position: relative;
+	z-index: 2;
+	background: gray;
+	top: -3px;
+}
+#generParam {
+	padding-top: 15px;
+	position: relative;
+	z-index: 2;
+	background: gray;
+	top: -3px;
+}
+#onglet1, #onglet2 {
+	position: absolute;
+	top: -50px;
+	text-shadow: rgba(163, 163, 163, 0.8) 1px 1px 0px;
+	background: gray;
+	min-height: 30px;
+	min-width: 100px;
+	border: 1px solid gray;
+	border-radius: 4px 4px 0 0;
+	box-shadow: 0 0 5px 2px black;
+	z-index: 1;
+}
+#onglet2 {
+	left: 135px;
+}
+.ongletPassive {
+	color: gray !important;
+	background: #444 !important;
+	text-shadow: rgba(60, 60, 60, 0.8) 1px 1px 0px !important;
+	border: 1px solid #444 !important;
+	box-shadow: 0 0 0 0 !important;
+}
+#onglet1 h5, #onglet2 h5 {
+	margin: 0;
+	padding: 5px;
+	font-size: 15px;
+	font-weight: bold;
+}
+#onglet1 h5:hover, #onglet2 h5:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
 #menu1, #menu2, #menu3 {
 	padding: 5px;
 	border-radius: 5px 5px 0 0;
+	z-index: 3;
+	position: relative;
+	color: rgba(68, 68, 68, 0.81);
+	font-size: 13px;
+	min-width: 65px;
 }
-#menu1:hover, #menu2:hover, #menu3:hover {
+#menu1:hover, #menu2:hover, #menu3:hover, #menu4:hover {
 	cursor: pointer;
-	opacity: 0.85;
+	color: rgb(68, 68, 68);
 }
-#menu1 {
-	background-color: rgb(206, 255, 190);
+#menu1 {/* legs param */ 
+	background-color: rgb(179, 185, 207);
+	top: 3px;
 }
-#menu2 {
-	background-color: rgb(100,184,228);
+#menu2 { /* arm param */ 
+	background-color: rgb(213, 213, 213);
 }
-#menu3 {
-	background-color: rgb(248, 173, 77);
+#menu3 {/* head param */ 
+	background-color: rgb(140, 146, 167);
 }
-
-#age_show {
-	color: rgb(139, 226, 247);
-	font-size: 80px;
-	text-shadow: 7px 7px 11px rgb(37, 37, 37);
+#menu4 {
+	background-color: rgb(250, 250, 250)
 }
 
 .Contentbox {
@@ -170,13 +416,13 @@ body {
 	left: -3px;
 }
 .Contentbox td {
-	color: rgba(138, 138, 138, 0.52);
-	font-family: arial;
-	text-align: left;
+	color: rgb(39, 35, 35);
+	text-align: right;
+	font-size: 12px;
 }
 
 .Contentbox table {
-	border-spacing: 30px 0px;
+	padding: 0 12px;
 }
 
 .button {
@@ -186,9 +432,10 @@ body {
 }
 #footer {
 	position: relative;
-	background: black;
-	color: #808080;
-	font-size: 10px;
+	background: rgba(0, 0, 0, 0.83);
+	color: rgb(204, 204, 204);
+	font-size: 12px;
+	width: 100%;
 }
 #footer p {
 	margin: 0;

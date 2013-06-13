@@ -1,8 +1,4 @@
-/*
- filedrag.js - HTML5 File Drag & Drop demonstration
- Featured on SitePoint.com
- Developed by Craig Buckler (@craigbuckler) of OptimalWorks.net
- */
+
 (function() {
 
 	// getElementById
@@ -49,7 +45,9 @@
 	// output file information
 	function ParseFile(file) {
 
-		Output("<p>File information: <strong>" + file.name + "</strong> type: <strong>" + file.type + "</strong> size: <strong>" + file.size + "</strong> bytes</p>");
+		Output("<p lang='en'>File information: <strong>" + file.name + "</strong> type: <strong>" + file.type + "</strong> size: <strong>" + file.size + "</strong> bytes</p>" +
+		+ "<p lang='fr'>Information du fichier: <strong>" + file.name + "</strong> type: <strong>" + file.type + "</strong> dimension: <strong>" + file.size + "</strong> bytes</p>"
+		);
 /*
 		// display an image
 		if (file.type.indexOf("image") == 0) {

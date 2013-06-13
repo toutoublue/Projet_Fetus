@@ -1,0 +1,41 @@
+html, body {
+	padding: 0px;
+	margin: 0px;
+}
+
+div#container {
+	position: absolute;
+	top: 0px;
+	bottom: -0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+}
+
+div#article {
+	font-size: 14pt;
+	background-color: #fff;
+	margin: 0px auto;
+	padding: 10px;
+	border-left: 1px solid #888;
+	border-right: 1px solid #888;
+	width: 720px;
+	text-align: left;
+}
+
+canvas#webviewer_canvas {
+	border: none;
+	margin: 0px auto;
+	background: rgba(0, 0, 0, 0.86);
+	width: 720px;
+	height: 720px;
+}
+
+div#webviewer_error {
+	width: 100%;
+	background: #f54;
+	font-family: Fixed, monospace;
+}
+.hidden {
+	display: none;
+}
